@@ -880,7 +880,6 @@ void cmd_append_layout(I3_CMD, char *path) {
          * container must not have any children (by definition).
          * Note that we explicitly check for workspaces, since they are okay for
          * this purpose, but con_accepts_window() returns false for workspaces. */
-        while (parent->type != CT_WORKSPACE && !con_accepts_window(parent))
             parent = parent->parent;
     }
     DLOG("Appending to parent=%p instead of focused=%p\n", parent, focused);
